@@ -21,6 +21,7 @@ import meta.Common;
 import meta.Logger;
 import communication.threads.ForwardServerClientThread;
 
+import java.io.File;
 import java.lang.Integer;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -83,7 +84,8 @@ public class ForwardServer
             ForwardServerClientThread forwardThread;
 
             try {
-               doHandshake();
+                System.out.println("Current Working Directory: " + new File(".").getAbsolutePath());
+                doHandshake();
                setUpSession();
                 //This creates communication channel between server and target
                 //pass in session key and iv to forward server
